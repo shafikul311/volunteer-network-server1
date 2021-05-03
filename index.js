@@ -50,11 +50,12 @@ client.connect(err => {
    app.delete('/deleteEvent/:id',(req,res)=>{
     const id = ObjectID(req.params.id);
     eventCollection.findOneAndDelete({_id:id}).then(result =>{
+      console.log(result)
       res.send(result.value)
     })
   })
 
-  // get Event
+  // Get Event
   app.get("/getVolunteer", (req ,res)=>{
     volunteerCollection.find({}).toArray((err ,documents)=>{
       res.send(documents)
@@ -76,6 +77,7 @@ client.connect(err => {
   app.delete('/delete/:id',(req,res)=>{
     const id = ObjectID(req.params.id);
     volunteerCollection.findOneAndDelete({_id:id}).then(result =>{
+      console.log(result)
       res.send(result.value)
     })
   })
