@@ -20,7 +20,7 @@ client.connect(err => {
 
 
 // get Event
-  app.get("/events", (req ,res)=>{
+  app.get("/event", (req ,res)=>{
     eventCollection.find({}).toArray((err ,doc)=>{
       console.log(doc)
       res.send(doc)
