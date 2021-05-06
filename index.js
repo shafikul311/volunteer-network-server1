@@ -21,9 +21,9 @@ client.connect(err => {
 
 // get Event
   app.get("/events", (req ,res)=>{
-    eventCollection.find({}).toArray((err ,documents)=>{
-      console.log(documents)
-      res.send(documents)
+    eventCollection.find({}).toArray((err ,doc)=>{
+      console.log(doc)
+      res.send(doc)
       
     })
   });
